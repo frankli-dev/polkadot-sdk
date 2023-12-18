@@ -2796,7 +2796,7 @@ impl<T: Config> Pallet<T> {
 		}
 
 		// Equivalent of (current_balance / current_points) * points
-		balance(u256(current_balance).saturating_mul(u256(points)).div(current_points))
+		balance(u256(current_balance).saturating_mul(u256(points)).div(u256(current_points)))
 	}
 
 	/// If the member has some rewards, transfer a payout from the reward pool to the member.
